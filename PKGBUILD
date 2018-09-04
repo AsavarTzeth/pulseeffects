@@ -21,16 +21,26 @@ conflicts=("${_pkgname}")
 source=("${_pkgname}::git+https://github.com/wwmm/pulseeffects.git")
 sha256sums=('SKIP')
 
+prepare() {
+  # Remove any potential residual build files
+  rm -rf _build
+}
+
 pkgver() {
-    cd "${srcdir}/${_pkgname}"
-    git describe --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+  cd "${srcdir}/${_pkgname}"
+  git describe --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
 }
 
 build() {
   cd "${srcdir}/${_pkgname}"
-  # Remove any potential residual build files
-  rm -rf _build
   meson _build --prefix=/usr --buildtype=release
+  ninja -C _build
+}
+
+check() {
+  cd "${srcdir}/${_pkgname}"
+  meson _build --prefix=/usr --buildtype=release
+  ninja -C _build test
 }
 
 package() {
