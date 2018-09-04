@@ -1,0 +1,13 @@
+sudo: required
+
+services:
+  - docker
+
+arch:
+  packages:
+    - appstream-glib
+  script:
+    - ./util/travis-build.sh
+
+script:
+  - ./util/arch-travis.sh

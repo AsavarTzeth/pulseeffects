@@ -1,0 +1,4 @@
+[submodule "util/arch-travis"]
+	path = util/arch-travis
+	url = https://github.com/AsavarTzeth/arch-travis.git
+	branch = fork
