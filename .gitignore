@@ -1,6 +1,7 @@
 __pycache__
 _build
 build
+data_volumes
 locale
 gschemas.compiled
 obj-*-linux-gnu

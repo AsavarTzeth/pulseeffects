@@ -3,6 +3,10 @@ sudo: required
 services:
   - docker
 
+cache:
+  directories:
+    - data_volumes
+
 arch:
   packages:
     - appstream-glib
