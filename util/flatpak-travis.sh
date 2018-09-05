@@ -7,6 +7,10 @@ basedir="$(pwd)"
 
 cd ./dist/flatpak
 
+# Initialize and clone git submodules
+git submodule init
+git submodule update
+
 # Use up-to-date remote sources (like a read-only mirror)
 git fetch origin travis
 git checkout travis
