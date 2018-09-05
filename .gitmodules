@@ -2,3 +2,6 @@
 	path = util/arch-travis
 	url = https://github.com/AsavarTzeth/arch-travis.git
 	branch = fork
+[submodule "dist/flatpak"]
+	path = dist/flatpak
+	url = https://github.com/flathub/com.github.wwmm.pulseeffects.git
